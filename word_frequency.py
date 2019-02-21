@@ -60,12 +60,19 @@ def print_word_freq(filename):
 
     # for value in word_freq.values():
     #     sorted(value, reverse=True)
-        
-    for key, value in word_freq.items():
-        print(value, key)
 
-    for key, value in word_freq.items():
-        sorted(word_freq.items(), key=lambda x: x[1])
+    sorted_word_freq = sorted(word_freq.items(), key=lambda x: x[1], reverse=True)
+    # print(sorted_word_freq)
+
+    sorted_dict = dict(sorted_word_freq)
+    # print(sorted_dict)
+
+        
+    # for key, value in word_freq.items():
+    #     print(value, key)
+
+    for key, value in sorted_dict.items():
+        # sorted(word_freq.items(), key=lambda x: x[1])
         # value = sorted(value, reverse = True)
         print(key, "|", value, "*" * value)
 
